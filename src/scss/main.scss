@@ -17,6 +17,7 @@
 	width: 100%;
 }
 .header {
+	width: 100%;
 	.pinAd {
 		width: 252px;
 		position: fixed;
@@ -30,15 +31,16 @@
 			width: 134px;
 		}
 		@include respond(sp) {
-			width: 100%;
-			left: 0;
+			// width: 100%;
+			// left: 0;
+			display: none;
 		}
 
 		&-background {
 			width: 100%;
-			@include respond(sp) {
-				display: none;
-			}
+			// @include respond(sp) {
+			// 	display: none;
+			// }
 		}
 		&-btn {
 			position: absolute;
@@ -71,23 +73,78 @@
 				}
 			}
 
-			@include respond(sp) {
-				width: 40%;
-				height: 70px;
-			}
-
+			// @include respond(sp) {
+			// 	width: 40%;
+			// 	height: 70px;
+			// }
 		}
 	}
 	.pinAd-phoneAdSP {
 		display: none;
-		@include respond(sp) {
-			position: fixed;
-			bottom: 10px;
-			right: 10px;
-			z-index: 9999;
+		// @include respond(sp) {
+		// 	position: fixed;
+		// 	bottom: 10px;
+		// 	right: 10px;
+		// 	z-index: 9999;
 
-			width: 40%;
-			height: 70px;
+		// 	width: 40%;
+		// 	height: 70px;
+		// }
+		@include respond(sp) {
+			z-index: 9999;
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			background-color: #fff;
+			width: 100%;
+			height: 48px;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			a {
+				width: calc(50% - 2px);
+				height: 44px;
+				border-radius: 3px;
+				align-items: center;
+				justify-content: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: .3s ease;
+				img {
+					width: 36px;
+				}
+				span {
+					margin-left: 10px;
+					font-family: Hiragino Sans;
+					font-weight: normal;
+					color: white;
+				}
+				
+
+				&:nth-child(1) {
+					background-color: #f79119;
+					span {
+						font-size: 14px;
+						line-height: 18px;
+					}
+					// &:hover{
+					// 	background-color: #1276cf;
+					// }
+				}
+				&:nth-child(2) {
+					background-color: #1276cf;
+					span {
+						font-size: 20px;
+					}
+					// &:hover{
+					// 	background-color: #f79119;
+					// }
+				}
+				&:hover{
+					background-color: #ff9dbc;
+				}
+			}
 		}
 	}
 }
@@ -97,7 +154,6 @@
 	background-color: #e8f0ff;
 	position: relative;
 	// position: absolute;
-
 
 	@include respond(pa) {
 		height: 650px;
@@ -137,7 +193,6 @@
 		transform: translatex(-50%);
 		z-index: 1;
 		width: 1271px;
-
 
 		@include respond(pa) {
 			width: 672px;
@@ -437,17 +492,17 @@
 					letter-spacing: 3px;
 					position: relative;
 
-					&:after {
-						content: '..........';
-						position: absolute;
-						left: 50%;
-						transform: translateX(-50%);
-						bottom: -25px;
-						font-size: 16px;
-						@include respond(sp) {
-							opacity: 0;
-						}
-					}
+					// &:after {
+					// 	content: '..........';
+					// 	position: absolute;
+					// 	left: 50%;
+					// 	transform: translateX(-50%);
+					// 	bottom: -25px;
+					// 	font-size: 16px;
+					// 	@include respond(sp) {
+					// 		opacity: 0;
+					// 	}
+					// }
 				}
 				&:nth-last-child(1) {
 					position: relative;
@@ -593,7 +648,7 @@
 		@include respond(pa) {
 			.popBlock {
 				width: 614px;
-				height: 73px;
+				// height: 73px;
 				line-height: 73px;
 				font-size: 22px;
 				letter-spacing: 2.2px;
@@ -658,7 +713,7 @@
 				color: #414141;
 				em {
 					font-weight: bold;
-					margin: 0 .3em;
+					margin: 0 0.3em;
 					background: linear-gradient(transparent 60%, #ffff66 60%);
 				}
 			}
@@ -805,6 +860,7 @@
 		}
 		@include respond(pa) {
 			padding: 22px 18px;
+			margin: 75px 0;
 			h3 {
 				font-size: 26px;
 				line-height: 38px;
@@ -995,7 +1051,6 @@
 	}
 }
 
-
 .sec4 {
 	width: 100%;
 	background-color: #e8e8e8;
@@ -1113,7 +1168,7 @@
 
 	&-explain {
 		margin-bottom: 100px;
-		border: 1px solid rgba(204, 204, 204, .5);
+		border: 1px solid rgba(204, 204, 204, 0.5);
 		padding: 20px 10px;
 		@include respond(sp) {
 			margin-bottom: 0;
@@ -1123,7 +1178,7 @@
 			font-size: 16px;
 			line-height: 1.8;
 			font-weight: normal;
-			margin-bottom: .2em;
+			margin-bottom: 0.2em;
 			@include respond(sp) {
 				font-size: 13px;
 			}
@@ -1131,7 +1186,7 @@
 				font-weight: bold;
 				font-size: 18px;
 				color: #707070;
-				margin: 0 .3em;
+				margin: 0 0.3em;
 				background: linear-gradient(transparent 60%, #ffff66 60%);
 				// text-decoration: #ff5555 wavy underline;
 				@include respond(sp) {
@@ -1217,12 +1272,12 @@
 
 				color: #676767;
 				font-weight: 600;
-				padding: .8em;
+				padding: 0.8em;
 				@include respond(pc) {
 					font-size: 20px;
 				}
 				&::placeholder {
-				  color: #ccc;
+					color: #ccc;
 					font-weight: 300;
 				}
 			}
@@ -1433,34 +1488,34 @@
 
 // animation
 .Lazyload {
-  opacity: 0;
+	opacity: 0;
 }
 .scroll_on1 {
-  animation: scroll_on1 .5s ease-in-out forwards;
+	animation: scroll_on1 0.5s ease-in-out forwards;
 }
 @keyframes scroll_on1 {
-  0% {
-    opacity: 0;
-    transform: translate(0, 25px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
+	0% {
+		opacity: 0;
+		transform: translate(0, 25px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
 }
 
 .bubble {
 	-webkit-animation: bubble 1s infinite alternate;
-  animation: bubble 1s infinite alternate;
-  bottom: calc(100% - 10px);
-  right: calc(100% - 60px);
+	animation: bubble 1s infinite alternate;
+	bottom: calc(100% - 10px);
+	right: calc(100% - 60px);
 }
 @keyframes bubble {
 	0% {
-    transform: translateY(0);
+		transform: translateY(0);
 	}
 	100% {
-    transform: translateY(-10px);
+		transform: translateY(-10px);
 	}
 }
 
@@ -1471,17 +1526,18 @@
 }
 @keyframes bubble2 {
 	0% {
-    transform: scale(1);
+		transform: scale(1);
 	}
 	100% {
-	    transform: scale(1.1);
+		transform: scale(1.1);
 	}
 }
 
 // form
-input, textarea {
+input,
+textarea {
 	font-size: 20px;
 	color: #676767;
 	font-weight: 600;
-	padding: .8em;
+	padding: 0.8em;
 }

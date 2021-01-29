@@ -35,11 +35,18 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
     position = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
 
     if (position > firstBtn_position && position < contact_position.top - 50) {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.pinAd').fadeIn();
-      if (width < 768) jquery__WEBPACK_IMPORTED_MODULE_0___default()('.pinAd-phoneAdSP').fadeIn();
+      // $('.pinAd').fadeIn();
+      // if (width < 768) $('.pinAd-phoneAdSP').fadeIn();
+      if (width < 768) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.pinAd-phoneAdSP').fadeIn();
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.pinAd').fadeIn();
+      }
+
+      ;
     } else {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('.pinAd').fadeOut();
-      if (width < 768) jquery__WEBPACK_IMPORTED_MODULE_0___default()('.pinAd-phoneAdSP').fadeOut();
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.pinAd-phoneAdSP').fadeOut(); // if (width < 768) $('.pinAd-phoneAdSP').fadeOut();
     }
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popBlock').click(function () {

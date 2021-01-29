@@ -1,0 +1,290 @@
+body {
+	width: 100%;
+
+	@include respond(sp) {
+		width: 100%;
+	}
+
+	font-size: 1rem;
+}
+
+.pa {
+	display: none;
+
+	@include respond(pa) {
+		display: block;
+	}
+	@include respond(pc) {
+		display: block;
+	}
+}
+.pain {
+	display: none;
+
+	@include respond(pa) {
+		display: inline;
+	}
+}
+.sp {
+	display: block;
+
+	@include respond(pa) {
+		display: none;
+	}
+	@include respond(pc) {
+		display: none;
+	}
+}
+.pc {
+	display: none;
+
+	@include respond(pc) {
+		display: block;
+	}
+}
+.pcin {
+	display: none;
+
+	@include respond(pc) {
+		display: inline;
+	}
+}
+div,
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+	color: #707070;
+}
+a:hover {
+	transition: all 0.2s ease-out;
+}
+
+.dishIntroBlock {
+	width: 312px;
+	height: 480px;
+	position: relative;
+	.recommendedOrNot {
+		position: absolute;
+		left: -11px;
+		top: -19px;
+		display: none;
+		transition: 0.2s;
+
+		&:hover {
+			transform: scale(1.04) rotate(15deg);
+		}
+	}
+	.recommendedActive {
+		display: block;
+	}
+	.container {
+		width: 100%;
+		height: 100%;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0px 3px 6px #0000001a;
+		border-radius: 10px;
+		background-color: #ffffff;
+		transition: all 0.3s;
+
+		&:hover {
+			background-color: #f2ede2;
+		}
+
+		.mainPic {
+			width: 100%;
+			height: 302px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.block {
+			display: flex;
+			flex-direction: column;
+			height: 166px;
+			padding-top: 24px;
+			&:nth-of-type(n) {
+				font-family: Hiragino Sans;
+			}
+			.dishName {
+				text-align: center;
+				font-size: 17px;
+				letter-spacing: 0.9px;
+				color: #c6b46d;
+			}
+			.dishCalorie {
+				text-align: center;
+				font-size: 13px;
+				line-height: 3;
+				letter-spacing: 0px;
+				color: #ed541c;
+			}
+			.dishIntro {
+				padding: 0 20px;
+				font-size: 15px;
+				font-weight: normal;
+				line-height: 22.5px;
+				letter-spacing: 0.8px;
+				color: #000000;
+			}
+			.dishPrice {
+				width: 100%;
+				font-size: 16px;
+				font-weight: normal;
+				line-height: 3;
+				color: #969696;
+				text-align: center;
+				span {
+					font-size: 12px;
+				}
+			}
+			.dishAllergie {
+				position: absolute;
+				right: 4px;
+				bottom: 2px;
+				img {
+					width: 40px;
+				}
+			}
+		}
+	}
+}
+.dishIntroDetailBlock {
+	width: 100vw;
+	height: 100vh;
+	z-index: 100;
+	position: fixed;
+	right: 0;
+	top: 0;
+	background: rgba($color: #000000, $alpha: 0.59);
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.4s;
+
+	&:target {
+		visibility: visible;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.container {
+		width: 92%;
+		max-width: 964px;
+		height: 454px;
+		max-height: 454px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background-color: #ffffff;
+		border-radius: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 64px;
+
+		.blockLeft {
+			position: relative;
+			margin-right: 48px;
+			width: 270px;
+			height: 100%;
+			.recommendedOrNot {
+				position: absolute;
+				left: -52px;
+				top: -52px;
+				transition: 0.2s;
+
+				&:hover {
+					transform: scale(1.04) rotate(15deg);
+				}
+			}
+			&-pic {
+				width: 100%;
+				height: 270px;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			&-picMini {
+				width: 270px;
+				height: 46px;
+				margin-top: 7px;
+				span {
+					display: inline-block;
+					margin-right: 5px;
+					background-position: center center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					width: 46px;
+					height: 46px;
+					opacity: 0.45;
+					cursor: pointer;
+					transition: 0.3s;
+					&:hover {
+						opacity: 1;
+					}
+				}
+				.picMiniActive {
+					opacity: 1;
+				}
+			}
+		}
+		.blockRight {
+			// width: calc(100% - 298px);
+			width: 501px;
+			height: 100%;
+			position: relative;
+			&:nth-of-type(n) {
+				font-family: Hiragino Sans;
+			}
+			a {
+				font-family: Montserrat;
+				font-size: 14px;
+				font-weight: normal;
+				color: #333333;
+				position: absolute;
+				right: -42px;
+				top: -40px;
+			}
+			.dishName {
+				font-size: 35px;
+				font-weight: normal;
+				letter-spacing: 1.8px;
+				color: #c6b46d;
+				margin-bottom: 25px;
+			}
+			.dishCalorie {
+				position: absolute;
+				right: 0;
+				top: 12px;
+				font-size: 13px;
+				font-weight: normal;
+				line-height: 26px;
+				color: #ed541c;
+			}
+			.dishIntroDetail {
+				width: 100%;
+				font-size: 16px;
+				font-weight: normal;
+				line-height: 27px;
+				letter-spacing: 0.8px;
+				color: #000000;
+				margin-bottom: 16px;
+			}
+			.dishPrice {
+				text-align: right;
+				font-size: 25px;
+				font-weight: normal;
+				letter-spacing: 0px;
+				color: #b53838;
+				span {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}

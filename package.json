@@ -1,0 +1,29 @@
+{
+  "name": "LP_version1.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "imagemin": "node imagemin.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "glob": "^7.1.6",
+    "imagemin": "^7.0.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-keep-folder": "^5.3.2",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.1",
+    "imagemin-svgo": "^8.0.0",
+    "laravel-mix": "^6.0.11",
+    "postcss": "^8.2.4",
+    "sass": "^1.32.5",
+    "sass-loader": "^8.0.2"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "jquery-inview": "^1.1.2"
+  }
+}

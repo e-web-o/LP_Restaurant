@@ -1,0 +1,6 @@
+$breakpoints: (
+	'sp': 'only screen and ( max-width: 767px)',
+	'pa': 'only screen and ( min-width: 768px) and (max-width: 1023px)',
+	'pc': 'only screen and ( min-width: 1024px)',
+	'epc': 'only screen and ( max-width: 1023px)'
+) !default;

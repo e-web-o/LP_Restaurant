@@ -1,0 +1,109 @@
+@mixin respond($breakpoint) {
+	$query: map-get($breakpoints, $breakpoint);
+	// 这里是scss error提示估计大部分人（包括我）都没怎么使用过
+	// @if not $query {
+	// 	@error 'No value found for `#{$breakpoint}`. Please make sure it is
+  //   defined in `$breakpoints` map.';
+	// }
+	// 具体断点解释在这里，作者比较严谨，校验了$query合法性
+	@media #{if(type-of($query) == 'string', unquote($query), inspect($query))} {
+		@content;
+	}
+}
+
+// unquote($query)：删除字符串中的引号；
+// quote($query)：给字符串添加引号。
+// inspect($query) Maps不能转换为纯CSS。作为变量的值或参数传递给CSS函数将会导致错误。
+//                 使用inspect($query) 函数以产生输出字符串。
+
+@mixin floatBotton($width, $height, $fontSize, $radius, $shadowRight, $shadowBottom, $asize) {
+	display: block;
+	width: $width;
+	height: $height;
+	font-family: Hiragino Sans;
+	font-size: $fontSize;
+	font-weight: normal;
+	line-height: $height;
+	text-align: center;
+	letter-spacing: 0.3px;
+	color: #ffffff;
+	border-radius: $radius;
+	background-color: #f79119;
+	box-shadow: $shadowRight $shadowBottom 0px #1276cf;
+	transition: 0.3s ease;
+
+	&:after {
+		position: absolute;
+		content: '>';
+		width: $asize;
+		height: $asize;
+		font-size: (0.73 * $asize);
+		text-align: center;
+		background-color: white;
+		color: #f79119;
+		border-radius: (0.5 * $asize);
+		right: $asize;
+		line-height: (0.9 * $asize);
+		top: (0.5 * $height - 0.5 * $asize);
+	}
+
+	&:hover {
+		transform: translate($shadowRight, $shadowBottom);
+		box-shadow: 0px 0px 0px #1276cf;
+	}
+}
+
+@mixin diyCalendar($fontSize,$fontColor,$eachBlockSize,$bgColor,$hoverBlockColor) {
+	.diyCalendar {
+		background-color: $bgColor;
+		// background-color: #efefef;
+		// width: 100%;
+		width: ($eachBlockSize * 7);
+		margin: 10px auto;
+	}
+	.diyCalendar .diyCalendarTop {
+		height: $eachBlockSize;
+		line-height: $eachBlockSize;
+		text-align: center;
+		position: relative;
+	}
+	.diyCalendarTopDate {
+		font: normal normal 600 $fontSize/$eachBlockSize Hiragino Sans;
+	}
+	.diyCalendarWeek td {
+		font-size: 15px;
+	}
+	td {
+		width: $eachBlockSize;
+		height: $eachBlockSize;
+		line-height: $eachBlockSize;
+		text-align: center;
+		font-size:$fontSize;
+	}
+	.diyCalendarTbody td:hover {
+		background-color: $hoverBlockColor;
+		cursor: pointer;
+	}
+	.curDate {
+		color: red;
+		font-weight: bold;
+	}
+	.diyCalendarLeft,
+	.diyCalendarRight {
+		width: $eachBlockSize;
+		height: $eachBlockSize;
+		position: absolute;
+		cursor: pointer;
+	}
+	.diyCalendarLeft {
+		left: 0;
+	}
+	.diyCalendarRight {
+		right: 0;
+	}
+	.diyCalendarLeft:hover,
+	.diyCalendarRight:hover {
+		background-color: rgba(30, 30, 30, 0.2);
+		// background-color: $hoverBlockColor;
+	}
+}

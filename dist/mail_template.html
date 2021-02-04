@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+  <meta http-equiv="Content-Language" content="ja">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-2022-jp">
+  <title>{{ mail_title }}</title>
+  <meta http-equiv="Content-Style-Type" content="text/css">
+</head>
+<body>
+  <p>
+    {{ mail_title }}
+  </p>
+  <table>
+    <tr>
+      <th>店舗名・会社名・屋号</th>
+      <td>{{ company_name }}</td>
+    </tr>
+    <tr>
+      <th>お名前・ご担当者名</th>
+      <td>{{ name }}</td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td>{{ tel }}</td>
+    </tr>
+    <tr>
+      <th>郵便番号</th>
+      <td>{{ postalCode }}</td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td>{{ address }}</td>
+    </tr>
+  </table>
+</body>
+</html>

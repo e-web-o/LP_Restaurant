@@ -1,5 +1,6 @@
 import $ from 'jquery';
 require('jquery-inview');
+// import v8n from "v8n";
 
 $(function() {
 
@@ -40,5 +41,11 @@ $(function() {
 	$('.popBlock').click(function() {
 		$(this).children('div').slideToggle();
 	});
+
+	// // form
+	// $('.form-field').on('keyup', function() {
+	// 	console.log($(this).val());
+	// 	console.log($(this).attr('name'));
+	// });
 
 });

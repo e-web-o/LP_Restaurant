@@ -13,7 +13,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 
-__webpack_require__(/*! jquery-inview */ "./node_modules/jquery-inview/jquery.inview.js");
+__webpack_require__(/*! jquery-inview */ "./node_modules/jquery-inview/jquery.inview.js"); // import v8n from "v8n";
+
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   var width = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width();
@@ -51,7 +52,11 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.popBlock').click(function () {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).children('div').slideToggle();
-  });
+  }); // // form
+  // $('.form-field').on('keyup', function() {
+  // 	console.log($(this).val());
+  // 	console.log($(this).attr('name'));
+  // });
 });
 
 /***/ }),

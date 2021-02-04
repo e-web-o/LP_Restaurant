@@ -1,3 +1,9 @@
+<?php if (isset($send)): ?>
+<script>
+	document.forms["mailform"].reset();
+	window.location.href = '#send_message';
+</script>
+<?php endif; ?>
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
@@ -89,26 +95,26 @@
 						<h5 class="popBlock Lazyload">家賃や電気・ガス代の高騰
 							<div class="popBlock-explain">希望があれば、弊社スタッフが電気やガス、電話などの光熱通信費の見直しのご提案を致します。日々の営業でどうしてもかかってしまう経費は少しでも削減したいですね。</div>
 						</h5>
-						<h5 class="popBlock Lazyload">競合店の増加
+						<!-- <h5 class="popBlock Lazyload">競合店の増加
 							<div class="popBlock-explain">あああああああああああああああああああああああああああああああああああああああああああああああああああああああ</div>
-						</h5>
+						</h5> -->
 						<h5 class="popBlock Lazyload">SNS・集客サイトの乱立
 							<div class="popBlock-explain">飲食店と相性がいいSNSのインスタグラムとの連携、Googleマイビジネスとの連携ができます。</div>
 						</h5>
-						<h5 class="popBlock Lazyload">緊急事態宣言による客数減
+						<!-- <h5 class="popBlock Lazyload">緊急事態宣言による客数減
 							<div class="popBlock-explain"></div>
-						</h5>
+						</h5> -->
 						<h5 class="popBlock Lazyload">決済手段の多様化
-							<div class="popBlock-explain">あああああああああああああああああああああああああああああああああああああああああああああああああああああああ</div>
+							<div class="popBlock-explain">キャッシュレスが進み、クレジット決済以外もQRコード決済等、多様化が進みつつあります。お悩みの場合はスタッフが直接ご相談をお聞きしサポートします。</div>
 						</h5>
 						<h5 class="popBlock Lazyload">オンライン予約やオンライン集客
-							<div class="popBlock-explain">あああああああああああああああああああああああああああああああああああああああああああああああああああああああ</div>
+							<div class="popBlock-explain">予約システムは標準で完備しております。</div>
 						</h5>
-						<h5 class="popBlock Lazyload">テイクアウトやデリバリー施策
+						<!-- <h5 class="popBlock Lazyload">テイクアウトやデリバリー施策
 							<div class="popBlock-explain">あああああああああああああああああああああああああああああああああああああああああああああああああああああああ</div>
-						</h5>
+						</h5> -->
 						<h5 class="popBlock Lazyload">ネット通販事業への取り組み
-							<div class="popBlock-explain">あああああああああああああああああああああああああああああああああああああああああああああああああああああああ</div>
+							<div class="popBlock-explain">ES（通販）サイトを運営する機能は一式、標準で揃っており、すぐにネット通販を開業できます。</div>
 						</h5>
 					</div>
 					<div class="sec1-hello">
@@ -278,37 +284,31 @@
 					</div>
 					<div class="contactForm Lazyload">
 						<script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
-						<form action="" method="post" class="h-adr">
+						<form action="mailer.php" method="post" name="mailform" class="h-adr">
 							<span class="p-country-name" style="display:none;">Japan</span>
 							<div class="form-group">
 								<label for="company">店舗名・会社名・屋号<span>必須</span></label>
-								<input type="text" name="company" placeholder="例)&nbsp;株式会社e-web" id="company" class="form-field required"
-								 title="御社名" required="required">
+								<input type="text" name="company" placeholder="例)&nbsp;株式会社e-web" id="company" class="form-field required" title="御社名" required="required">
 							</div>
 							<div class="form-group">
 								<label for="name">お名前・ご担当者名<span>必須</span></label>
-								<input type="text" name="name" placeholder="例)&nbsp;山田 一" id="name" class="form-field required" title="お名前"
-								 required="required">
+								<input type="text" name="name" placeholder="例)&nbsp;山田 一" id="name" class="form-field required" title="お名前" required="required">
 							</div>
 							<div class="form-group">
 								<label for="tel">電話番号<span>必須</span></label>
-								<input type="text" name="tel" placeholder="例)&nbsp;080-0000-0000" id="tel" class="form-field required" title="電話番号"
-								 required="required">
+								<input type="text" name="tel" placeholder="例)&nbsp;080-0000-0000" id="tel" class="form-field required" title="電話番号" required="required">
 							</div>
 							<div class="form-group">
 								<label for="postalCode">郵便番号<span>必須</span></label>
-								<input type="text" name="postalCode" placeholder="例) 175-0123" id="postalCode" class="form-field required p-postal-code"
-								 title="メール" required="required">
+								<input type="text" name="postalCode" placeholder="例) 175-0123" id="postalCode" class="form-field required p-postal-code" title="メール" required="required">
 							</div>
 							<div class="form-group">
 								<label for="address">住所<span>必須</span></label>
-								<input type="text" name="address" placeholder="例) 東京都千代田区神田神保町1-50 浦野ビル7F" id="address" class="form-field required p-region p-locality p-street-address p-extended-address"
-								 title="メールアドレス" required="required">
+								<input type="text" name="address" placeholder="例) 東京都千代田区神田神保町1-50 浦野ビル7F" id="address" class="form-field required p-region p-locality p-street-address p-extended-address" title="メールアドレス" required="required">
 							</div>
 							<div class="form-group">
 								<label for="email">メールアドレス<span>必須</span></label>
-								<input type="text" name="email" placeholder="例)&nbsp;example@eweb.co.jp" id="email" class="form-field required"
-								 title="メールアドレス" required="required">
+								<input type="text" name="email" placeholder="例)&nbsp;example@eweb.co.jp" id="email" class="form-field required" title="メールアドレス" required="required">
 							</div>
 							<div class="form-group">
 								<label for="contact">お問い合わせ内容<span>必須</span></label>
@@ -350,11 +350,13 @@
 							<div class="submit-btn">
 								<button type="submit" class="fancy-button" id="contact_submit">送信</button>
 							</div>
-							<div class="send-message" style="display: none;">
+							<?php if (isset($send)): ?>
+							<div id="send_message" class="send-message">
 								<p>お問い合わせありがとうございました</p>
 								<p>2〜3日中に担当よりご連絡させていただきます</p>
 								<p>宜しくお願い致します</p>
 							</div>
+							<?php endif; ?>
 						</form>
 					</div>
 				</section>
